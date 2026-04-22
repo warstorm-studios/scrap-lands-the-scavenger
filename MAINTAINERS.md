@@ -44,6 +44,11 @@ Maintainers list
 NOTE: When reading this file, please look for the most precise areas first. When
       adding to this list, please keep the entries in alphabetical order.
 
+GAMEPLAY
+M: Lior Gonda <Lior.Gonda@gmail.com>
+S: Maintained
+F: assets/
+
 OPTIMIZATIONS AND FFI
 M: Muhammad Al-Sarraf <m1829js@gmail.com>
 S: Maintained
