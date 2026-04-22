@@ -45,7 +45,7 @@ NOTE: When reading this file, please look for the most precise areas first. When
       adding to this list, please keep the entries in alphabetical order.
 
 GAMEPLAY
-M: Lior Gondaa <Lior.Gonda@gmail.com>
+M: Lior Gonda <Lior.Gonda@gmail.com>
 S: Maintained
 F: assets/
 
