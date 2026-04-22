@@ -1,6 +1,8 @@
 # Guidelines
 
-This file will document how to format your code for this repo.
+This file will document how to format your code for this repo.  
+Before starting, just know that you should always sign your commits. This can be
+done in git with the `-s` flag.
 
 ## 1) Legal info
 
