@@ -158,6 +158,7 @@ After the `/`, you should put a description of whatever you're doing. Examples:
 - `struct/edit-scene-file-structure`
 - `build/update-ffi-config`
 - `test/collisions-bound-check`
+- `hotfix/incorrect-initialization-of-scene`
 
 Once you finished doing what you wanted to do, make a PR (Pull Request) and
 someone will review it and give you feedback.
