@@ -136,6 +136,17 @@ who you are:
    `refactor/`
 5. If you're rewriting some parts to increase performance, the branch should be
    named `perf/`.
+6. If you're editing the structure of the project in terms of directories and
+   file names, the branch should be named `struct/`.
+7. If you're editing a build script or updating a dependency, the branch should
+   be named `build/`
+8. If you're creating tests, the branch should be named `test/`
+9. If you're doing an emergency bug fix, the branch should be named `hotfix/`
+
+> The difference between `bug/` and `hotfix/` is mainly that `bug/` will be a
+> bug fixed in the next version of the game, whilst a `hotfix/` will be a bug
+> fixed in the current version of the game. Hotfixes should only be emergency
+> bug fixes that are crashing the game for everyone.
 
 After the `/`, you should put a description of whatever you're doing. Examples:
 
@@ -144,6 +155,9 @@ After the `/`, you should put a description of whatever you're doing. Examples:
 - `docs/edit-readme`
 - `refactor/simplify-player-objects`
 - `perf/optimize-projectile-generation`
+- `struct/edit-scene-file-structure`
+- `build/update-ffi-config`
+- `test/collisions-bound-check`
 
 Once you finished doing what you wanted to do, make a PR (Pull Request) and
 someone will review it and give you feedback.
