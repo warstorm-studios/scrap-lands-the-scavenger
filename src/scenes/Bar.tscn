@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://c6wlkywjc4t1c"]
+
+[ext_resource type="PackedScene" uid="uid://cocc38n36ifjn" path="res://src/scenes/Template.tscn" id="1_apkqi"]
+[ext_resource type="Script" uid="uid://b8jux72pkfnxm" path="res://src/scripts/spawn/go_to_level_entry_point.gd" id="2_apkqi"]
+[ext_resource type="Script" uid="uid://dd7w1imkeu7ec" path="res://src/scripts/spawn/checkpoint.gd" id="3_0pnbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo3yb"]
+size = Vector2(2000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8875d"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uclv3"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phx5g"]
+
+[node name="Scene" unique_id=1408701904 instance=ExtResource("1_apkqi")]
+
+[node name="LevelBounds" parent="Managers/LevelConfig" parent_id_path=PackedInt32Array(545558491) index="0" unique_id=220522138]
+position = Vector2(650, 0)
+extents = Vector2(1000, 150)
+
+[node name="Ground" type="StaticBody2D" parent="Environment/Platforms" parent_id_path=PackedInt32Array(808353547) index="0" unique_id=2087615947]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platforms/Ground" index="0" unique_id=616318090]
+position = Vector2(650, 10)
+shape = SubResource("RectangleShape2D_wo3yb")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Platforms/Ground" index="1" unique_id=1824712186]
+offset_left = -350.0
+offset_right = 1650.0
+offset_bottom = 300.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 1)
+
+[node name="Left Wall" type="StaticBody2D" parent="Environment/Platforms" parent_id_path=PackedInt32Array(808353547) index="1" unique_id=1404164805]
+position = Vector2(-938, -259)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platforms/Left Wall" index="0" unique_id=83183840]
+position = Vector2(150, 200)
+shape = SubResource("RectangleShape2D_8875d")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Platforms/Left Wall" index="1" unique_id=672436410]
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 650.0
+offset_bottom = 700.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 1)
+
+[node name="Right Wall" type="StaticBody2D" parent="Environment/Platforms" parent_id_path=PackedInt32Array(808353547) index="2" unique_id=592333882]
+position = Vector2(1978, -380)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platforms/Right Wall" index="0" unique_id=132722681]
+position = Vector2(150, 300)
+shape = SubResource("RectangleShape2D_8875d")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Platforms/Right Wall" index="1" unique_id=336761791]
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 650.0
+offset_bottom = 800.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 1)
+
+[node name="GoToOutside" type="Area2D" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="0" unique_id=779586913]
+z_index = -1
+position = Vector2(1564, -64)
+script = ExtResource("2_apkqi")
+target_scene = "uid://5w33mpvkyxvx"
+target_checkpoint_id = "bar"
+activation_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Items/GoToOutside" index="0" unique_id=299761135]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_uclv3")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Items/GoToOutside" index="1" unique_id=218519191]
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0, 1, 0, 1)
+
+[node name="Label" type="Label" parent="Environment/Items/GoToOutside" index="2" unique_id=558663787]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Outside"
+
+[node name="Checkpoint1" type="Area2D" parent="Environment/Checkpoints" parent_id_path=PackedInt32Array(1468189443) index="0" unique_id=129047996]
+position = Vector2(1479, -42)
+script = ExtResource("3_0pnbd")
+checkpoint_id = "door"
+spawn_offset = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Checkpoints/Checkpoint1" index="0" unique_id=1649364798]
+shape = SubResource("RectangleShape2D_phx5g")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Checkpoints/Checkpoint1" index="1" unique_id=2117361767]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
