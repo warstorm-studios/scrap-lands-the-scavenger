@@ -18,13 +18,11 @@
 ## holding direct node references across system boundaries.
 extends Node
 
-# Health & Damage
-## Emitted by [Health] whenever HP changes on any character.
-signal health_changed(character: Node, old_val: int, new_val: int, max_val: int)
-## Emitted by [Health] when a character's HP reaches zero.
-signal character_died(character: Node)
-## Emitted by [Health] when a character is revived after death.
-signal character_revived(character: Node)
+# Audio
+## Requests [AudioManager] to play a registered SFX by ID.
+signal play_sfx_requested(sfx_id: String)
+## Requests [AudioManager] to play a registered music track by ID.
+signal play_music_requested(music_id: String)
 
 # Game State
 ## Emitted when the player can no longer continue the current run.
@@ -37,6 +35,14 @@ signal player_respawned()
 signal level_complete(scene_id: String)
 ## Emitted when any non-player enemy is defeated.
 signal enemy_defeated(enemy: Node)
+
+# Health & Damage
+## Emitted by [Health] whenever HP changes on any character.
+signal health_changed(character: Node, old_val: int, new_val: int, max_val: int)
+## Emitted by [Health] when a character's HP reaches zero.
+signal character_died(character: Node)
+## Emitted by [Health] when a character is revived after death.
+signal character_revived(character: Node)
 
 # Level & Scene
 ## Emitted by [Checkpoint] when the player activates it.
@@ -52,12 +58,12 @@ signal scene_transition_started(from_scene: String, to_scene: String)
 ## Emitted by [LevelManager] after a scene change completes.
 signal scene_transition_finished(scene_name: String)
 
+# Sanity
+## Emitted by [Sanity] whenever sanity changes on any character.
+signal sanity_changed(character: Node, old_val: int, new_val: int, max_val: int)
+## Emitted by [Sanity] when sanity reaches zero.
+signal sanity_depleted(character: Node)
+
 # Time
 ## Emitted by [TimeManager] when [code]Engine.time_scale[/code] changes.
 signal time_scale_changed(new_scale: float)
-
-# Audio
-## Requests [AudioManager] to play a registered SFX by ID.
-signal play_sfx_requested(sfx_id: String)
-## Requests [AudioManager] to play a registered music track by ID.
-signal play_music_requested(music_id: String)

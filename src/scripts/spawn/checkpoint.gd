@@ -28,7 +28,7 @@ enum State { INACTIVE, ACTIVE, USED }
 ## Unique identifier for this checkpoint within the level.
 @export var checkpoint_id: String = ""
 ## World-space offset added to global_position to compute the spawn location.
-@export var spawn_offset: Vector2 = Vector2(0.0, -40.0)
+@export var spawn_offset: Vector2 = Vector2(0.0, 0.0)
 
 ## Current lifecycle state; updated by LevelManager and the entry signal.
 var state: State = State.INACTIVE

@@ -22,18 +22,18 @@ class_name AnimParams
 # Sorted alphabetically.
 
 ## AnimationTree path for activation blend/flag.
-const IS_ACTIVATING = "parameters/IsActivating"
+const IS_ACTIVATING := "parameters/IsActivating"
 ## AnimationTree path for falling state.
-const IS_FALLING    = "parameters/IsFalling"
+const IS_FALLING    := "parameters/IsFalling"
 ## AnimationTree path for idle state.
-const IS_IDLE       = "parameters/IsIdle"
+const IS_IDLE       := "parameters/IsIdle"
 ## AnimationTree path for jumping state.
-const IS_JUMPING    = "parameters/IsJumping"
+const IS_JUMPING    := "parameters/IsJumping"
 ## AnimationTree path for moving state.
-const IS_MOVING     = "parameters/IsMoving"
+const IS_MOVING     := "parameters/IsMoving"
 ## AnimationTree path for running state.
-const IS_RUNNING    = "parameters/IsRunning"
+const IS_RUNNING    := "parameters/IsRunning"
 ## AnimationTree path for jump count parameter.
-const JUMP_COUNT    = "parameters/JumpCount"
+const JUMP_COUNT    := "parameters/JumpCount"
 ## AnimationTree path for speed parameter.
-const SPEED         = "parameters/Speed"
+const SPEED         := "parameters/Speed"

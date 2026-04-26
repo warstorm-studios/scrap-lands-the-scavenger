@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://7rn5yb3o65sv" path="res://src/scripts/world/camera_rig.gd" id="2_camrg"]
 [ext_resource type="Script" uid="uid://d3p7aop2m44nv" path="res://src/scripts/environment/level_bounds.gd" id="3_5e43r"]
 [ext_resource type="PackedScene" uid="uid://byep5gltvekup" path="res://src/prefabs/characters/DemoPlayer.tscn" id="3_vf7yc"]
-[ext_resource type="FontFile" uid="uid://dvt0bc7sflvcm" path="res://src/fonts/ARIAL.TTF" id="4_gjjxp"]
+[ext_resource type="FontFile" uid="uid://dvt0bc7sflvcm" path="res://assets/fonts/ARIAL.TTF" id="4_gjjxp"]
 [ext_resource type="Script" uid="uid://c4n8fps1dblg" path="res://src/scripts/ui/debug_fps.gd" id="5_dbfps"]
 
 [node name="Scene" type="Node2D" unique_id=1408701904]

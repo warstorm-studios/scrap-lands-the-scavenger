@@ -1,6 +1,6 @@
 # src/
 
-All game source assets: scenes, scripts, prefabs, fonts, and native modules.
+All game source assets: scenes, scripts, prefabs, and native modules.
 
 ---
 
@@ -10,7 +10,6 @@ All game source assets: scenes, scripts, prefabs, fonts, and native modules.
 src/
 ├── animation/      Animation parameter constants
 ├── ffi/            Native FFI library definition
-├── fonts/          Font assets
 ├── perf/           C performance module
 ├── prefabs/        Reusable blueprints, organised by category
 ├── scenes/         Top-level game scenes
@@ -32,13 +31,6 @@ inline strings.
 
 > **Placeholder** — purpose not yet documented. Contains `perf.ffilibrary`,
 > which appears to define a native library binding. Details TBD.
-
----
-
-## fonts/
-
-`ARIAL.TTF` — the only font asset currently in use, referenced by `LevelBounds`
-for debug extents display and by UI labels.
 
 ---
 
