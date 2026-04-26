@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b0vc6uoseiytl" path="res://src/scripts/character/health.gd" id="3_bo6x7"]
 [ext_resource type="Script" uid="uid://pcipx4swotad" path="res://src/scripts/character/hurtbox.gd" id="3_qq52b"]
 [ext_resource type="Script" uid="uid://crfqdyev01ggd" path="res://src/scripts/character/abilities/ability_horizontal_movement.gd" id="5_0cscn"]
-[ext_resource type="Script" path="res://src/scripts/character/sanity.gd" id="5_5avsm"]
+[ext_resource type="Script" uid="uid://b7snt2xqkm3p8" path="res://src/scripts/character/sanity.gd" id="5_5avsm"]
 [ext_resource type="Script" uid="uid://bh4gynmye53x7" path="res://src/scripts/character/abilities/ability_button_activation.gd" id="5_8qkvu"]
 [ext_resource type="Script" uid="uid://ywsa7snpomnd" path="res://src/scripts/character/abilities/ability_jump.gd" id="7_3k0ln"]
 [ext_resource type="Script" uid="uid://bfg6xee0wndwf" path="res://src/scripts/character/abilities/ability_level_bounds.gd" id="8_5avsm"]

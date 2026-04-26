@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dvt0bc7sflvcm"
-path="res://.godot/imported/ARIAL.TTF-005826f3083d5694ef1fadd99046e947.fontdata"
+path="res://.godot/imported/ARIAL.TTF-2adaae8b89693914c733d4653a6ee6c0.fontdata"
 
 [deps]
 
-source_file="res://src/fonts/ARIAL.TTF"
-dest_files=["res://.godot/imported/ARIAL.TTF-005826f3083d5694ef1fadd99046e947.fontdata"]
+source_file="res://assets/fonts/ARIAL.TTF"
+dest_files=["res://.godot/imported/ARIAL.TTF-2adaae8b89693914c733d4653a6ee6c0.fontdata"]
 
 [params]
 
