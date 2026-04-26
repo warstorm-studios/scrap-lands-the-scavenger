@@ -14,10 +14,50 @@ config/name="scrap-lands-the-scavenger"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*uid://6173t3eux0kq"
+InputManager="*uid://yeqsgiwbwgi1"
+TimeManager="*uid://xv4g0q0xt1i"
+SaveManager="*uid://qx5hf4utwy5"
+AudioManager="*uid://cf0c0blyjb41f"
+GameManager="*uid://cj6nack0x76gm"
+LevelManager="*uid://cypch28oc8tde"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Projectile_Player"
+2d_physics/layer_4="Projectile_Enemy"
+2d_physics/layer_5="Platform"
+2d_physics/layer_6="Platform_OneWay"
+2d_physics/layer_7="KillZone"
+2d_physics/layer_8="Pickup"
+2d_physics/layer_9="Trigger"
+2d_physics/layer_10="Hurtbox_Player"
+2d_physics/layer_11="Hurtbox_Enemy"
+2d_physics/layer_12="Hitbox_Player"
+2d_physics/layer_13="Hitbox_Enemy"
+2d_physics/layer_14="Interactable"
+2d_physics/layer_15="Water"
+2d_physics/layer_16="Ladder"
+2d_physics/layer_17="CameraBounds"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

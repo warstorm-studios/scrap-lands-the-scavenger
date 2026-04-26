@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://5w33mpvkyxvx"]
+
+[ext_resource type="PackedScene" uid="uid://cocc38n36ifjn" path="res://src/scenes/Template.tscn" id="1_8875d"]
+[ext_resource type="Script" uid="uid://dd7w1imkeu7ec" path="res://src/scripts/spawn/checkpoint.gd" id="2_phx5g"]
+[ext_resource type="Script" uid="uid://b8jux72pkfnxm" path="res://src/scripts/spawn/go_to_level_entry_point.gd" id="2_wo3yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo3yb"]
+size = Vector2(2000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8875d"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6q5p"]
+size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phx5g"]
+
+[node name="Scene" unique_id=1408701904 instance=ExtResource("1_8875d")]
+
+[node name="LevelBounds" parent="Managers/LevelConfig" parent_id_path=PackedInt32Array(545558491) index="0" unique_id=220522138]
+position = Vector2(650, 0)
+extents = Vector2(1000, 150)
+
+[node name="Ground" type="StaticBody2D" parent="Environment/Platforms" parent_id_path=PackedInt32Array(808353547) index="0" unique_id=2087615947]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platforms/Ground" index="0" unique_id=616318090]
+position = Vector2(650, 10)
+shape = SubResource("RectangleShape2D_wo3yb")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Platforms/Ground" index="1" unique_id=1824712186]
+offset_left = -350.0
+offset_right = 1650.0
+offset_bottom = 300.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 1)
+
+[node name="Left Wall" type="StaticBody2D" parent="Environment/Platforms" parent_id_path=PackedInt32Array(808353547) index="1" unique_id=1404164805]
+position = Vector2(-938, -259)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platforms/Left Wall" index="0" unique_id=83183840]
+position = Vector2(150, 200)
+shape = SubResource("RectangleShape2D_8875d")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Platforms/Left Wall" index="1" unique_id=672436410]
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 650.0
+offset_bottom = 700.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 1)
+
+[node name="Right Wall" type="StaticBody2D" parent="Environment/Platforms" parent_id_path=PackedInt32Array(808353547) index="2" unique_id=592333882]
+position = Vector2(1978, -380)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platforms/Right Wall" index="0" unique_id=132722681]
+position = Vector2(150, 300)
+shape = SubResource("RectangleShape2D_8875d")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Platforms/Right Wall" index="1" unique_id=336761791]
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 650.0
+offset_bottom = 800.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 1)
+
+[node name="BathHouse" type="ColorRect" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="0" unique_id=1771727183]
+z_index = -1
+offset_left = -259.0
+offset_top = -100.0
+offset_right = -109.0
+color = Color(1, 0.07450981, 1, 1)
+
+[node name="Label" type="Label" parent="Environment/Items/BathHouse" index="0" unique_id=268276637]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bathhouse
+Press E to enter"
+
+[node name="Bar" type="ColorRect" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="1" unique_id=1889639457]
+z_index = -1
+offset_left = 311.0
+offset_top = -100.0
+offset_right = 461.0
+color = Color(1, 0.07450981, 1, 1)
+
+[node name="Label" type="Label" parent="Environment/Items/Bar" index="0" unique_id=549547187]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bar
+Press E to enter"
+
+[node name="GoToBar" type="Area2D" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="2" unique_id=770793724]
+z_index = -1
+position = Vector2(429, -64)
+script = ExtResource("2_wo3yb")
+target_scene = "uid://c6wlkywjc4t1c"
+target_checkpoint_id = "door"
+facing_direction = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Items/GoToBar" index="0" unique_id=1260079942]
+position = Vector2(16, 32)
+shape = SubResource("RectangleShape2D_e6q5p")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Items/GoToBar" index="1" unique_id=231489760]
+offset_right = 32.0
+offset_bottom = 64.0
+color = Color(0, 1, 0, 1)
+
+[node name="CampFire" type="ColorRect" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="3" unique_id=1792588134]
+z_index = -1
+offset_left = 571.0
+offset_top = -100.0
+offset_right = 721.0
+color = Color(1, 0.07450981, 1, 1)
+
+[node name="Label" type="Label" parent="Environment/Items/CampFire" index="0" unique_id=426592697]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Campfire
+Press E to enter"
+
+[node name="Bus" type="ColorRect" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="4" unique_id=929723909]
+z_index = -1
+offset_left = 1218.0
+offset_top = -100.0
+offset_right = 1368.0
+color = Color(1, 0.07450981, 1, 1)
+
+[node name="Label" type="Label" parent="Environment/Items/Bus" index="0" unique_id=1171850572]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bus
+Press E to enter"
+
+[node name="Garage" type="ColorRect" parent="Environment/Items" parent_id_path=PackedInt32Array(2032776547) index="5" unique_id=1512912156]
+z_index = -1
+offset_left = 1469.0
+offset_top = -100.0
+offset_right = 1619.0
+color = Color(1, 0.07450981, 1, 1)
+
+[node name="Label" type="Label" parent="Environment/Items/Garage" index="0" unique_id=639463373]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Garage
+Press E to enter"
+
+[node name="Checkpoint1" type="Area2D" parent="Environment/Checkpoints" parent_id_path=PackedInt32Array(1468189443) index="0" unique_id=129047996]
+visible = false
+position = Vector2(14, -35)
+script = ExtResource("2_phx5g")
+checkpoint_id = "bathtub"
+spawn_offset = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Checkpoints/Checkpoint1" index="0" unique_id=1649364798]
+shape = SubResource("RectangleShape2D_phx5g")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Checkpoints/Checkpoint1" index="1" unique_id=2117361767]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Checkpoint2" type="Area2D" parent="Environment/Checkpoints" parent_id_path=PackedInt32Array(1468189443) index="1" unique_id=114571147]
+visible = false
+position = Vector2(508, -35)
+script = ExtResource("2_phx5g")
+checkpoint_id = "bar"
+spawn_offset = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Checkpoints/Checkpoint2" index="0" unique_id=125166627]
+shape = SubResource("RectangleShape2D_phx5g")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Checkpoints/Checkpoint2" index="1" unique_id=187285809]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cocc38n36ifjn"]
+
+[ext_resource type="Script" uid="uid://vs833piiwfqp" path="res://src/scripts/world/level_config.gd" id="1_8qyk2"]
+[ext_resource type="Script" uid="uid://7rn5yb3o65sv" path="res://src/scripts/world/camera_rig.gd" id="2_camrg"]
+[ext_resource type="Script" uid="uid://d3p7aop2m44nv" path="res://src/scripts/environment/level_bounds.gd" id="3_5e43r"]
+[ext_resource type="PackedScene" uid="uid://byep5gltvekup" path="res://src/prefabs/characters/DemoPlayer.tscn" id="3_vf7yc"]
+[ext_resource type="FontFile" uid="uid://dvt0bc7sflvcm" path="res://src/fonts/ARIAL.TTF" id="4_gjjxp"]
+[ext_resource type="Script" uid="uid://c4n8fps1dblg" path="res://src/scripts/ui/debug_fps.gd" id="5_dbfps"]
+
+[node name="Scene" type="Node2D" unique_id=1408701904]
+
+[node name="Starters" type="Node" parent="." unique_id=1624242098]
+
+[node name="CameraRig" type="Camera2D" parent="Starters" unique_id=372143887]
+script = ExtResource("2_camrg")
+
+[node name="Managers" type="Node" parent="." unique_id=832875041]
+
+[node name="LevelConfig" type="Node" parent="Managers" unique_id=545558491]
+script = ExtResource("1_8qyk2")
+player_scene = ExtResource("3_vf7yc")
+
+[node name="LevelBounds" type="Node2D" parent="Managers/LevelConfig" unique_id=220522138]
+script = ExtResource("3_5e43r")
+font = ExtResource("4_gjjxp")
+extents = Vector2(300, 150)
+metadata/_custom_type_script = "uid://d3p7aop2m44nv"
+
+[node name="Canvases" type="Node" parent="." unique_id=1266257925]
+
+[node name="DebugOverlay" type="CanvasLayer" parent="Canvases" unique_id=1984532016]
+layer = 127
+
+[node name="FpsLabel" type="Label" parent="Canvases/DebugOverlay" unique_id=2143867059]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -20.0
+offset_right = 80.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_gjjxp")
+theme_override_font_sizes/font_size = 10
+text = "FPS: 0"
+script = ExtResource("5_dbfps")
+
+[node name="Environment" type="Node" parent="." unique_id=1213749867]
+
+[node name="Background" type="Node" parent="Environment" unique_id=1726474342]
+
+[node name="Platforms" type="Node" parent="Environment" unique_id=808353547]
+
+[node name="OneWayPlatforms" type="Node" parent="Environment" unique_id=1141482519]
+
+[node name="KillOnTouch" type="Node" parent="Environment" unique_id=175859424]
+
+[node name="Enemies" type="Node" parent="Environment" unique_id=1450650547]
+
+[node name="Items" type="Node" parent="Environment" unique_id=2032776547]
+
+[node name="Checkpoints" type="Node" parent="Environment" unique_id=1468189443]
+
+[node name="Characters" type="Node" parent="Environment" unique_id=356321642]
