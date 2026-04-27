@@ -14,19 +14,24 @@
 # License along with this program.  If not, see
 # <https://www.gnu.org/licenses/>.
 
-## Shared enumerations used across all game systems.
-class_name Enums
+class_name TypedDamage
+extends Resource
 
-## Game difficulty; stored in [RunData] and shown in the save-select UI.
-enum DifficultyLevel {
-	EASY,
-	NORMAL,
-	HARD,
-}
+@export var amount: int = 0
+@export var type: Enums.DamageType = Enums.DamageType.DEFAULT
+@export var knockback: Vector2 = Vector2.ZERO
 
-## Scene transition style used by [method LevelManager.load_scene].
-enum TransitionType { NONE, FADE, WIPE_LEFT, WIPE_RIGHT }
+# Not exported — set at runtime only (nodes can't be serialized as resource fields).
+var source: Node
 
-## Damage category applied to a [TypedDamage] payload.
-## VOID bypasses resistances, damage reduction, and invincibility frames.
-enum DamageType { DEFAULT, VOID }
+
+static func create(
+	p_amount: int,
+	p_type: Enums.DamageType = Enums.DamageType.DEFAULT,
+	p_source: Node = null
+) -> TypedDamage:
+	var d := TypedDamage.new()
+	d.amount = p_amount
+	d.type = p_type
+	d.source = p_source
+	return d

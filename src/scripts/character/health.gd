@@ -72,7 +72,7 @@ func _ready() -> void:
 func take_damage(damage: TypedDamage) -> void:
 	if is_dead:
 		return
-	var is_void := damage.type == TypedDamage.DamageType.VOID
+	var is_void := damage.type == Enums.DamageType.VOID
 	if is_invincible and not is_void:
 		return
 	if damage.type in immunities:
