@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://byep5gltvekup"]
+
+[ext_resource type="Script" uid="uid://bpbns4ckjmc0c" path="res://src/scripts/character/character.gd" id="1_8mxir"]
+[ext_resource type="Script" uid="uid://0ia1vn212cx4" path="res://src/scripts/character/player_controller.gd" id="2_qf8ws"]
+[ext_resource type="Script" uid="uid://b0vc6uoseiytl" path="res://src/scripts/character/health.gd" id="3_bo6x7"]
+[ext_resource type="Script" uid="uid://pcipx4swotad" path="res://src/scripts/character/hurtbox.gd" id="3_qq52b"]
+[ext_resource type="Script" uid="uid://crfqdyev01ggd" path="res://src/scripts/character/abilities/ability_horizontal_movement.gd" id="5_0cscn"]
+[ext_resource type="Script" uid="uid://b7snt2xqkm3p8" path="res://src/scripts/character/sanity.gd" id="5_5avsm"]
+[ext_resource type="Script" uid="uid://bh4gynmye53x7" path="res://src/scripts/character/abilities/ability_button_activation.gd" id="5_8qkvu"]
+[ext_resource type="Script" uid="uid://ywsa7snpomnd" path="res://src/scripts/character/abilities/ability_jump.gd" id="7_3k0ln"]
+[ext_resource type="Script" uid="uid://bfg6xee0wndwf" path="res://src/scripts/character/abilities/ability_level_bounds.gd" id="8_5avsm"]
+[ext_resource type="Script" uid="uid://c0jx5wh4sx7d5" path="res://src/scripts/character/abilities/ability_pause.gd" id="9_j2g8j"]
+[ext_resource type="Script" uid="uid://b73fq47tg7s7y" path="res://src/scripts/character/abilities/ability_run.gd" id="10_3k0ln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5en1s"]
+size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq52b"]
+size = Vector2(32, 64)
+
+[node name="DemoPlayer" type="Node2D" unique_id=1733215226]
+script = ExtResource("1_8mxir")
+character_id = "Player_1"
+metadata/_custom_type_script = "uid://bpbns4ckjmc0c"
+
+[node name="PlayerController" type="CharacterBody2D" parent="." unique_id=266668967]
+collision_mask = 48
+script = ExtResource("2_qf8ws")
+metadata/_custom_type_script = "uid://0ia1vn212cx4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerController" unique_id=512662265]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_5en1s")
+
+[node name="Node2D" type="Node2D" parent="PlayerController" unique_id=465966708]
+
+[node name="ColorRect" type="ColorRect" parent="PlayerController/Node2D" unique_id=1223860162]
+offset_left = -16.0
+offset_top = -64.0
+offset_right = 16.0
+
+[node name="Hurtbox" type="Area2D" parent="PlayerController" unique_id=974980020]
+collision_layer = 512
+collision_mask = 4160
+script = ExtResource("3_qq52b")
+metadata/_custom_type_script = "uid://pcipx4swotad"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerController/Hurtbox" unique_id=747157352]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_qq52b")
+
+[node name="Health" type="Node" parent="." unique_id=66941048]
+script = ExtResource("3_bo6x7")
+metadata/_custom_type_script = "uid://b0vc6uoseiytl"
+
+[node name="Sanity" type="Node" parent="." unique_id=1835030317]
+script = ExtResource("5_5avsm")
+metadata/_custom_type_script = "uid://b0vc6uoseiytl"
+
+[node name="Ability_ButtonActivation" type="Node" parent="." unique_id=791084036]
+script = ExtResource("5_8qkvu")
+metadata/_custom_type_script = "uid://bh4gynmye53x7"
+
+[node name="Ability_HorizontalMovement" type="Node" parent="." unique_id=1055200649]
+script = ExtResource("5_0cscn")
+metadata/_custom_type_script = "uid://crfqdyev01ggd"
+
+[node name="Ability_Jump" type="Node" parent="." unique_id=110126666]
+script = ExtResource("7_3k0ln")
+metadata/_custom_type_script = "uid://ywsa7snpomnd"
+
+[node name="Ability_LevelBounds" type="Node" parent="." unique_id=1784022425]
+script = ExtResource("8_5avsm")
+metadata/_custom_type_script = "uid://bfg6xee0wndwf"
+
+[node name="Ability_Pause" type="Node" parent="." unique_id=1189307217]
+script = ExtResource("9_j2g8j")
+metadata/_custom_type_script = "uid://c0jx5wh4sx7d5"
+
+[node name="Ability_Run" type="Node" parent="." unique_id=1306870810]
+script = ExtResource("10_3k0ln")
+metadata/_custom_type_script = "uid://b73fq47tg7s7y"
